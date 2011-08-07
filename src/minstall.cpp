@@ -302,10 +302,10 @@ int MInstall::getPartitionNumber()
     return getCmdOut("cat /proc/partitions | grep '[h,s,v].[a-z][1-9]$' | wc -l").toInt();
 }
 
-// unmount antiX in case we are retrying
+// unmount Swift Linux in case we are retrying
 void MInstall::prepareToInstall() {
 
-  updateStatus(tr("Ready to install antiX filesystem"), 0);
+  updateStatus(tr("Ready to install Swift Linux filesystem"), 0);
   // unmount /home if it exists
   system("/bin/umount -l /mnt/antiX/home >/dev/null 2>&1");
   system("/bin/umount -l /mnt/antiX >/dev/null 2>&1");
@@ -383,7 +383,7 @@ bool MInstall::makeDefaultPartitions() {
   QString rootdev = QString(drv).append("1");
   QString swapdev = QString(drv).append("2");
 //  QString homedev = QString(drv).append("3");
-  QString msg = QString(tr("Ok to format and use the entire disk (%1) for antiX?")).arg(drv);
+  QString msg = QString(tr("Ok to format and use the entire disk (%1) for Swift Linux?")).arg(drv);
   ans = QMessageBox::information(0, QString::null, msg,
          tr("Yes"), tr("No"));
  if (ans != 0) {
@@ -1024,7 +1024,7 @@ bool MInstall::installLoader() {
       // error
       setCursor(QCursor(Qt::ArrowCursor));
       QMessageBox::critical(this, QString::null,
-        tr("Sorry, installing GRUB failed. This may be due to a change in the disk formatting. You can uncheck GRUB and finish installing antiX, then reboot to the CD and repair the installation with the reinstall GRUB function."));
+        tr("Sorry, installing GRUB failed. This may be due to a change in the disk formatting. You can uncheck GRUB and finish installing Swift Linux, then reboot to the CD and repair the installation with the reinstall GRUB function."));
       return false;
     }
   }
