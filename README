@@ -1,0 +1,11 @@
+This repository contains the source code for installing Swift Linux.
+
+Packages needed:
+qt4-qmake
+g++
+libqt4-dbg
+libqt4-dev
+
+Commands to compile:
+qmake-qt4
+make
