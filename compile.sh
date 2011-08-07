@@ -4,7 +4,7 @@
 # Check for root user login
 if [ $( id -u ) -eq 0 ]; then
 	echo "You must NOT be root to run this script."
-	exit
+	exit 2
 fi
 
 USERNAME=$(logname)
@@ -15,3 +15,5 @@ cd /home/$USERNAME/develop/installer/src
 rm minstall
 qmake-qt4
 make
+
+exit 0
