@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'meinstall.ui'
 **
-** Created: Mon Jan 10 17:35:25 2011
-**      by: Qt User Interface Compiler version 4.6.3
+** Created: Sun Aug 7 23:33:31 2011
+**      by: Qt User Interface Compiler version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -1048,7 +1048,7 @@ public:
     {
         MeInstall->setWindowTitle(QApplication::translate("MeInstall", "MeInstall", 0, QApplication::UnicodeUTF8));
         copyrightBox->setTitle(QApplication::translate("MeInstall", "Terms of Use", 0, QApplication::UnicodeUTF8));
-        copyrightBrowser->setHtml(QApplication::translate("MeInstall", "<p>Swift Linux is a Linux distribution based on antiX Linux.</p><p>antiX is an independent linux distribution based on Debian Testing and MEPIS Linux.</p> <p>antiX uses some components from MEPIS Linux which are released under an Apache free license. Some MEPIS components have been modified for antiX. Please be aware of the MEPIS copyright. The MEPIS product names and the MEPIS logos are trademarks of MEPIS LLC. Commercial use of MEPIS products and/or marks is prohibited unless permission is obtained in writing.</p> <p>Enjoy using Swift Linux.</p>", 0, QApplication::UnicodeUTF8));
+        copyrightBrowser->setHtml(QApplication::translate("MeInstall", "<p>Swift Linux is based on antiX Linux.  antiX is an independent linux distribution based on Debian Testing and MEPIS Linux.</p> <p>antiX uses some components from MEPIS Linux which are released under an Apache free license. Some MEPIS components have been modified for antiX. Please be aware of the MEPIS copyright. The MEPIS product names and the MEPIS logos are trademarks of MEPIS LLC. Commercial use of MEPIS products and/or marks is prohibited unless permission is obtained in writing.</p> <p>Enjoy using Swift Linux.</p>", 0, QApplication::UnicodeUTF8));
         agreeCheckBox->setText(QApplication::translate("MeInstall", "I have read the Terms", 0, QApplication::UnicodeUTF8));
         installationTypeBox->setTitle(QApplication::translate("MeInstall", "1c. Select type of installation", 0, QApplication::UnicodeUTF8));
         leaveLabel->setText(QApplication::translate("MeInstall", "Leave free space up to:", 0, QApplication::UnicodeUTF8));
@@ -1072,8 +1072,8 @@ public:
         badblocksCheck->setText(QApplication::translate("MeInstall", "Check for badblocks (takes longer)", 0, QApplication::UnicodeUTF8));
         rootTypeCombo->clear();
         rootTypeCombo->insertItems(0, QStringList()
-         << QApplication::translate("MeInstall", "ext4", 0, QApplication::UnicodeUTF8)
          << QApplication::translate("MeInstall", "ext3", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("MeInstall", "ext4", 0, QApplication::UnicodeUTF8)
          << QApplication::translate("MeInstall", "reiserfs", 0, QApplication::UnicodeUTF8)
         );
         rootTypeLabel->setText(QApplication::translate("MeInstall", "Filesystem type:", 0, QApplication::UnicodeUTF8));
@@ -1126,7 +1126,7 @@ public:
         userNameLabel->setText(QApplication::translate("MeInstall", "Default user login name:", 0, QApplication::UnicodeUTF8));
         passwordCheckBox->setText(QApplication::translate("MeInstall", "Show passwords", 0, QApplication::UnicodeUTF8));
         reminderBox->setTitle(QApplication::translate("MeInstall", "Reminders", 0, QApplication::UnicodeUTF8));
-        remindersBrowser->setHtml(QApplication::translate("MeInstall", "<p>Support Swift Linux.</p><p><b>Support antiX</b><br/>antiX is supported by people like you. Some help others at the support forum - http://antix.freeforums.org, or translate help files into different languages, or make suggestions, write documentation, or help test new software.</p>", 0, QApplication::UnicodeUTF8));
+        remindersBrowser->setHtml(QApplication::translate("MeInstall", "<p><b>Support Swift Linux and antiX Linux</b><br/>antiX is supported by people like you. Some help others at the support forum - http://antix.freeforums.org, or translate help files into different languages, or make suggestions, write documentation, or help test new software.</p>", 0, QApplication::UnicodeUTF8));
         backButton->setText(QApplication::translate("MeInstall", "< Back", 0, QApplication::UnicodeUTF8));
         backButton->setShortcut(QApplication::translate("MeInstall", "Alt+K", 0, QApplication::UnicodeUTF8));
         nextButton->setText(QApplication::translate("MeInstall", "Next >", 0, QApplication::UnicodeUTF8));
