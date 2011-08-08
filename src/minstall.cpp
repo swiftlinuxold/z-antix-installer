@@ -1527,7 +1527,7 @@ void MInstall::pageDisplayed(int next) {
         "You will be prompted for confirmation before any destructive actions are performed.</p>"
         "<p>Swift Linux requires about 2 GB of space. 5 GB or more is preferred."
         "You can use the entire disk or you can put Swift Linux on existing partitions. </p>"
-        "<p>If you are using PC type hardware, run GParted from here if you need to modify some partitions before doing a custom install. If you are using Apple hardware, you must never use parted or GParted on your boot drive. Instead you must setup your partitions and boot manager in OSX before installing Swift Linux. The SimplyMEPIS Assistant is an OSX application available on the antiX CD to help you prepare your OSX boot volume for Swift Linux.</p>"
+        "<p>If you are using PC type hardware, run GParted from here if you need to modify some partitions before doing a custom install. If you are using Apple hardware, you must never use parted or GParted on your boot drive. Instead you must setup your partitions and boot manager in OSX before installing Swift Linux. The SimplyMEPIS Assistant is an OSX application available on the Swift Linux CD to help you prepare your OSX boot volume for Swift Linux.</p>"
         "<p>The ext3, ext4, and reiserfs Linux filesystems are supported and ext3 is recommended.</p>"
         "<p><b>Partition Requirements</b><br/>A linux-swap partition is highly recommended. "
         "Your RAM memory plus swap space must be at least 128MB. "
@@ -1541,7 +1541,7 @@ void MInstall::pageDisplayed(int next) {
         "If you will be installing and/or testing a lot of applications, you should make this partition larger but, unless you test a lot software, it is unlikely you would need more than 4GB in this partition.</p>"
         "<p><b>Auto-install Using Entire Disk</b><br/>The selected disk will be reformatted and the installer will partition the disk as Swift Linux prefers. "
         "Optionally you may request that a portion of the disk is left free if possible, for example so you can install a second OS later.</p>"
-        "<p><b>Custom Install on Existing Partitions</b><br/>antiX will be installed on the existing partitions you choose. "
+        "<p><b>Custom Install on Existing Partitions</b><br/>Swift Linux will be installed on the existing partitions you choose. "
         "If the disk isn't already partitioned appropriately, you can modify the partitions here with GParted.  If you have modified the partitions, it is best to reboot the system before continuing with the installation.  Do NOT use parted or GParted if you are installing on an Apple computer boot drive.</p>"
         "<p><b>Upgrading</b><br/>To upgrade an existing Linux installation, choose to install on existing partitions and then choose to preserve the data in /home.</p>"));
       break;
@@ -1597,7 +1597,7 @@ void MInstall::pageDisplayed(int next) {
 
     case 4:
       setCursor(QCursor(Qt::ArrowCursor));
-      ((MMain *)mmn)->setHelpText(tr("<p><b>Select Boot Method</b><br/>antiX uses the GRUB bootloader to boot Swift Linux and MS-Windows. "
+      ((MMain *)mmn)->setHelpText(tr("<p><b>Select Boot Method</b><br/>Swift Linux uses the GRUB bootloader to boot Swift Linux and MS-Windows. "
         "If you have other versions of Linux already installed on your computer, GRUB will not be automatically configured to boot them. "
         "You will have to add them manually to the /boot/grub/menu.lst file.</p>"
         "<p>If you install GRUB here, by default it is placed in the Master Boot Record of your boot drive "
