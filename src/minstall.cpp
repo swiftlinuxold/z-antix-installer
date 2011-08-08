@@ -301,7 +301,7 @@ int MInstall::getPartitionNumber()
 // unmount antiX in case we are retrying
 void MInstall::prepareToInstall() {
 
-  updateStatus(tr("Ready to install antiX filesystem"), 0);
+  updateStatus(tr("Ready to install Swift Linux filesystem"), 0);
   // unmount /home if it exists
   system("/bin/umount -l /mnt/antiX/home >/dev/null 2>&1");
   system("/bin/umount -l /mnt/antiX >/dev/null 2>&1");
@@ -379,7 +379,7 @@ bool MInstall::makeDefaultPartitions() {
   QString rootdev = QString(drv).append("1");
   QString swapdev = QString(drv).append("2");
 //  QString homedev = QString(drv).append("3");
-  QString msg = QString(tr("Ok to format and use the entire disk (%1) for antiX?")).arg(drv);
+  QString msg = QString(tr("Ok to format and use the entire disk (%1) for Swift Linux?")).arg(drv);
   ans = QMessageBox::information(0, QString::null, msg,
          tr("Yes"), tr("No"));
  if (ans != 0) {
@@ -861,7 +861,7 @@ bool MInstall::makeGrub(int rootdev, QString rootpart, const char *rootmnt, bool
     chdir("/mnt/antiX");
 
     for (QStringList::Iterator it = vals.end(); ;) {
-      val = QString( tr("title antiX at %1, kernel %2\n")).arg(rootpart).arg((*--it).mid(8));
+      val = QString( tr("title Swift Linux at %1, kernel %2\n")).arg(rootpart).arg((*--it).mid(8));
       fputs(val.toAscii(), fp);
       fputs(groot.toAscii(), fp);
       if (!getCmdValue("cat /etc/default/antiX","SERVER","="," ").contains("yes", Qt::CaseInsensitive)) {
@@ -1020,7 +1020,7 @@ bool MInstall::installLoader() {
       // error
       setCursor(QCursor(Qt::ArrowCursor));
       QMessageBox::critical(this, QString::null,
-        tr("Sorry, installing GRUB failed. This may be due to a change in the disk formatting. You can uncheck GRUB and finish installing antiX, then reboot to the CD and repair the installation with the reinstall GRUB function."));
+        tr("Sorry, installing GRUB failed. This may be due to a change in the disk formatting. You can uncheck GRUB and finish installing Swift Linux, then reboot to the CD and repair the installation with the reinstall GRUB function."));
       return false;
     }
   }
@@ -1453,7 +1453,7 @@ void MInstall::stopInstall() {
     return;
   } else if (curr >= c-3) {
     int ans = QMessageBox::information(0, QString::null,
-      tr("antiX installation and configuration is complete.\n"
+      tr("Swift Linux installation and configuration is complete.\n"
         "To use the new installation, reboot without the CD.\n"
         "Do you want to reboot now?"),
         tr("Yes"), tr("No"));
@@ -1525,21 +1525,21 @@ void MInstall::pageDisplayed(int next) {
       ((MMain *)mmn)->setHelpText(tr("<p><b>General Instructions</b><br/>BEFORE PROCEEDING, CLOSE ALL OTHER APPLICATIONS.</p>"
         "<p>On each page, please read the instructions, make your selections, and then click on Next when you are ready to proceed. "
         "You will be prompted for confirmation before any destructive actions are performed.</p>"
-        "<p>Lite versions of antiX require about 1.2 GB of space and other versions of antiX require about 2 GB of space. 5 GB or more is preferred."
-        "You can use the entire disk or you can put antiX on existing partitions. </p>"
-        "<p>If you are using PC type hardware, run GParted from here if you need to modify some partitions before doing a custom install. If you are using Apple hardware, you must never use parted or GParted on your boot drive. Instead you must setup your partitions and boot manager in OSX before installing antiX. The SimplyMEPIS Assistant is an OSX application available on the antiX CD to help you prepare your OSX boot volume for antiX Linux.</p>"
+        "<p>Swift Linux requires about 2 GB of space. 5 GB or more is preferred."
+        "You can use the entire disk or you can put Swift Linux on existing partitions. </p>"
+        "<p>If you are using PC type hardware, run GParted from here if you need to modify some partitions before doing a custom install. If you are using Apple hardware, you must never use parted or GParted on your boot drive. Instead you must setup your partitions and boot manager in OSX before installing Swift Linux. The SimplyMEPIS Assistant is an OSX application available on the antiX CD to help you prepare your OSX boot volume for Swift Linux.</p>"
         "<p>The ext3, ext4, and reiserfs Linux filesystems are supported and ext3 is recommended.</p>"
         "<p><b>Partition Requirements</b><br/>A linux-swap partition is highly recommended. "
         "Your RAM memory plus swap space must be at least 128MB. "
         "A larger size can improve system performance but you should not need more than 512MB of swap space unless you develop software or edit video files or run a database server.</p>"
         "<p>A separate linux /home (pronounced home) partition is recommended and should be at least 200MB and preferably as large as possible. "
         "This is where your work will be stored. "
-        "A separate home partition will make it easier to backup, upgrade or reinstall antiX in the future."
+        "A separate home partition will make it easier to backup, upgrade or reinstall Swift Linux in the future."
         "A linux / ( pronounced root) partition is required. "
-        "It needs to be at least 800 MB for Lite versions of antiX and 1.3 GB for other versions of antiX and it must be larger if you do not have a separate home partition. "
+        "It needs to be at least 1.3 GB for Swift Linux and it must be larger if you do not have a separate home partition. "
         "This is where additional applications will be stored and where the Linux kernel and drivers may be compiled. "
         "If you will be installing and/or testing a lot of applications, you should make this partition larger but, unless you test a lot software, it is unlikely you would need more than 4GB in this partition.</p>"
-        "<p><b>Auto-install Using Entire Disk</b><br/>The selected disk will be reformatted and the installer will partition the disk as antiX prefers. "
+        "<p><b>Auto-install Using Entire Disk</b><br/>The selected disk will be reformatted and the installer will partition the disk as Swift Linux prefers. "
         "Optionally you may request that a portion of the disk is left free if possible, for example so you can install a second OS later.</p>"
         "<p><b>Custom Install on Existing Partitions</b><br/>antiX will be installed on the existing partitions you choose. "
         "If the disk isn't already partitioned appropriately, you can modify the partitions here with GParted.  If you have modified the partitions, it is best to reboot the system before continuing with the installation.  Do NOT use parted or GParted if you are installing on an Apple computer boot drive.</p>"
@@ -1549,12 +1549,12 @@ void MInstall::pageDisplayed(int next) {
     case 2:
       ((MMain *)mmn)->setHelpText(tr("<p><b>Limitations</b><br/>Remember, this software is provided AS-IS with no warranty what-so-ever. "
          "It's solely your responsibility to backup your data before proceeding.</p>"
-         "<p><b>Choose Partitions</b><br/>antiX requires a root partition. The swap partition is optional but highly recommended. If you want to use the Suspend-to-Disk feature of antiX, you will need a swap partition that is larger than your physical memory size.</p>"
+         "<p><b>Choose Partitions</b><br/>Swift Linux requires a root partition. The swap partition is optional but highly recommended. If you want to use the Suspend-to-Disk feature of Swift Linux, you will need a swap partition that is larger than your physical memory size.</p>"
          "<p>If you choose a separate /home partition it will be easier for you to upgrade in the future, but this will not be possible if you are upgrading from an installation that does not have a separate home partition.</p>"
          "<p><b>Upgrading</b><br/>To upgrade from an existing Linux installation, select the same home partition as before and check the preference to preserve data in /home.</p>"
          "<p>If you are preserving an existing /home directory tree located on your root partition, the installer will not reformat the root partition. "
          "As a result, the installation will take much longer than usual.</p>"
-         "<p><b>Preferred Filesystem Type</b><br/>For antiX Linux, you may choose to format the partitions as ext3, ext4, or reiser. </p>"
+         "<p><b>Preferred Filesystem Type</b><br/>For Swift Linux, you may choose to format the partitions as ext3, ext4, or reiser. </p>"
          "<p><b>Bad Blocks</b><br/>If you choose ext3 or ext4 as the format type, you have the option of checking and correcting for badblocks on the drive. "
          "The badblock check is very time consuming, so you may want to skip this step unless you suspect that your drive has badblocks.</p>"));
       break;
@@ -1565,7 +1565,7 @@ void MInstall::pageDisplayed(int next) {
       "<p>Without you there would be no antiX Linux.</p>"
       "<p>anticapitalista</p>"));
       ((MMain *)mmn)->setHelpText(tr("<p><b>Installation in Progress</b><br/>"
-        "antiX is installing.  For a fresh install, this will probably take 3-20 minutes, depending on the speed of your system and the size of any partitions you are reformatting.</p>"
+        "Swift Linux is installing.  For a fresh install, this will probably take 3-20 minutes, depending on the speed of your system and the size of any partitions you are reformatting.</p>"
         "<p>If you click the Abort button, the installation will be stopped as soon as possible.</p>"));
       nextButton->setEnabled(false);
       prepareToInstall();
@@ -1597,7 +1597,7 @@ void MInstall::pageDisplayed(int next) {
 
     case 4:
       setCursor(QCursor(Qt::ArrowCursor));
-      ((MMain *)mmn)->setHelpText(tr("<p><b>Select Boot Method</b><br/>antiX uses the GRUB bootloader to boot antiX and MS-Windows. "
+      ((MMain *)mmn)->setHelpText(tr("<p><b>Select Boot Method</b><br/>antiX uses the GRUB bootloader to boot Swift Linux and MS-Windows. "
         "If you have other versions of Linux already installed on your computer, GRUB will not be automatically configured to boot them. "
         "You will have to add them manually to the /boot/grub/menu.lst file.</p>"
         "<p>If you install GRUB here, by default it is placed in the Master Boot Record of your boot drive "
@@ -1612,7 +1612,7 @@ void MInstall::pageDisplayed(int next) {
       break;
 
     case 5:
-      ((MMain *)mmn)->setHelpText(tr("<p><b>Common Services to Enable</b><br/>Select any of the these common services that you might need with your system configuration and the services will be started automatically when you start antiX.</p>"));
+      ((MMain *)mmn)->setHelpText(tr("<p><b>Common Services to Enable</b><br/>Select any of the these common services that you might need with your system configuration and the services will be started automatically when you start Swift Linux.</p>"));
       nextButton->setEnabled(true);
       backButton->setEnabled(true);
       break;
@@ -1645,13 +1645,13 @@ void MInstall::pageDisplayed(int next) {
       break;
 
     case 9:
-      ((MMain *)mmn)->setHelpText(tr("<p><b>Congratulations!</b><br/>You have completed the installation of antiX Linux.</p>"
-        "<p><b>Finding Applications</b><br/>There are hundreds of excellent applications installed with antiX. "
+      ((MMain *)mmn)->setHelpText(tr("<p><b>Congratulations!</b><br/>You have completed the installation of Swift Linux.</p>"
+        "<p><b>Finding Applications</b><br/>There are hundreds of excellent applications installed with Swift Linux. "
         "The best way to learn about them is to browse through the Menu and try them. "
-        "Many of the apps were developed specifically for the icewm/fluxbox environment. "
+        "Many of the apps were developed specifically for the icewm environment. "
         "These are shown in the main menus. "
         "Other Linux applications can be found in Menu > Applications</p>"
-        "<p>In addition antiX includes many standard linux applications that are run only from the commandline and therefore do not show up in Menu.</p>"));
+        "<p>In addition Swift Linux includes many standard linux applications that are run only from the commandline and therefore do not show up in Menu.</p>"));
       nextButton->setEnabled(true);
       backButton->setEnabled(false);
       break;
@@ -1969,7 +1969,7 @@ void MInstall::procAbort() {
 bool MInstall::close() {
   if (proc->state() != QProcess::NotRunning) {
     int ans = QMessageBox::warning(0, QString::null,
-        tr("antiX is installing, are you \nsure you want to Close now?"),
+        tr("Swift Linux is installing, are you \nsure you want to Close now?"),
         tr("Yes"), tr("No"));
     if (ans != 0) {
       return false;
@@ -2002,7 +2002,7 @@ void MInstall::delDone(int exitCode, QProcess::ExitStatus exitStatus) {
     copyLinux();
   } else {
     nextButton->setEnabled(true);
-    unmountGoBack(tr("Failed to delete old antiX on destination.\nReturning to Step 1."));
+    unmountGoBack(tr("Failed to delete old Swift Linux on destination.\nReturning to Step 1."));
   }
 }
 
@@ -2102,7 +2102,7 @@ void MInstall::copyDone(int exitCode, QProcess::ExitStatus exitStatus) {
     on_nextButton_clicked();
   } else {
     nextButton->setEnabled(true);
-    unmountGoBack(tr("Failed to write antiX to destination.\nReturning to Step 1."));
+    unmountGoBack(tr("Failed to write Swift Linux to destination.\nReturning to Step 1."));
   }
 }
 
@@ -2129,6 +2129,7 @@ void MInstall::copyTime() {
   switch (i) {
     case 1:
       tipsEdit->setText(tr("<p><b>Getting Help</b><br/>"
+        "Basic information about Swift Linux is at http://www.swiftlinux.org "
         "Basic information about antiX Linux is at http://antix.mepis.com "
         "There are volunteers to help you at the antiX Forum, http://antix.freeforums.org</p>"
         "<p>If you ask for help, please remember to describe your problem and your computer "
@@ -2137,13 +2138,13 @@ void MInstall::copyTime() {
     
     case 15:
       tipsEdit->setText(tr("<p><b>Repairing Your Installation</b><br/>"
-      "If antiX stops working from the hard drive, sometimes it's possible to fix the problem by booting from CD and running one of the utilities in System Configuration or by using one of the regular Linux tools to repair the system.</p>"
-      "<p>You can also use your antiX CD to recover data from MS-Windows systems!</p>"));
+      "If Swift Linux stops working from the hard drive, sometimes it's possible to fix the problem by booting from CD and running one of the utilities in System Configuration or by using one of the regular Linux tools to repair the system.</p>"
+      "<p>You can also use your Swift Linux CD to recover data from MS-Windows systems!</p>"));
       break;
 
     case 30:
       if (!getCmdValue("cat /etc/default/antiX","SERVER","="," ").contains("yes", Qt::CaseInsensitive)) {
-      tipsEdit->setText(tr("<p><b>Support antiX</b><br/>"
+      tipsEdit->setText(tr("<p><b>Support Swift Linux and antiX Linux</b><br/>"
       "antiX is supported by people like you. Some help others at the "
       "support forum - http://antix.freeforums.org, or translate help files into different "
       "languages, or make suggestions, write documentation, or help test new software.</p>"));
@@ -2153,7 +2154,7 @@ void MInstall::copyTime() {
     case 45:
       if (!getCmdValue("cat /etc/default/antiX","SERVER","="," ").contains("yes", Qt::CaseInsensitive)) {
       tipsEdit->setText(tr("<p><b>Adjusting Your Sound Mixer</b><br/>"
-      "antiX attempts to configure the sound mixer for you but sometimes it will be "
+      "Swift Linux attempts to configure the sound mixer for you but sometimes it will be "
       "necessary for you to turn up volumes and unmute channels in the mixer "
       "in order to hear sound.</p> "
       "<p>The mixer shortcut is located in the tray. Click on it to open the mixer. </p>"));
