@@ -104,7 +104,7 @@ public:
 
     void retranslateUi(QDialog *MeMain)
     {
-        MeMain->setWindowTitle(QApplication::translate("MeMain", "antiX Install", 0, QApplication::UnicodeUTF8));
+        MeMain->setWindowTitle(QApplication::translate("MeMain", "Swift Linux Install", 0, QApplication::UnicodeUTF8));
         closeButton->setText(QApplication::translate("MeMain", "Close", 0, QApplication::UnicodeUTF8));
         mainTabs->setTabText(mainTabs->indexOf(tab), QApplication::translate("MeMain", "Help", 0, QApplication::UnicodeUTF8));
     } // retranslateUi

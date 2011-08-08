@@ -1048,7 +1048,7 @@ public:
     {
         MeInstall->setWindowTitle(QApplication::translate("MeInstall", "MeInstall", 0, QApplication::UnicodeUTF8));
         copyrightBox->setTitle(QApplication::translate("MeInstall", "Terms of Use", 0, QApplication::UnicodeUTF8));
-        copyrightBrowser->setHtml(QApplication::translate("MeInstall", "<p>antiX is an independent linux distribution based on Debian Testing and MEPIS Linux.</p> <p>antiX uses some components from MEPIS Linux which are released under an Apache free license. Some MEPIS components have been modified for antiX. Please be aware of the MEPIS copyright. The MEPIS product names and the MEPIS logos are trademarks of MEPIS LLC. Commercial use of MEPIS products and/or marks is prohibited unless permission is obtained in writing.</p> <p>Enjoy using antiX.</p>", 0, QApplication::UnicodeUTF8));
+        copyrightBrowser->setHtml(QApplication::translate("MeInstall", "<p>Swift Linux is a Linux distribution based on antiX Linux.</p><p>antiX is an independent linux distribution based on Debian Testing and MEPIS Linux.</p> <p>antiX uses some components from MEPIS Linux which are released under an Apache free license. Some MEPIS components have been modified for antiX. Please be aware of the MEPIS copyright. The MEPIS product names and the MEPIS logos are trademarks of MEPIS LLC. Commercial use of MEPIS products and/or marks is prohibited unless permission is obtained in writing.</p> <p>Enjoy using Swift Linux.</p>", 0, QApplication::UnicodeUTF8));
         agreeCheckBox->setText(QApplication::translate("MeInstall", "I have read the Terms", 0, QApplication::UnicodeUTF8));
         installationTypeBox->setTitle(QApplication::translate("MeInstall", "1c. Select type of installation", 0, QApplication::UnicodeUTF8));
         leaveLabel->setText(QApplication::translate("MeInstall", "Leave free space up to:", 0, QApplication::UnicodeUTF8));
@@ -1081,14 +1081,14 @@ public:
         installBox->setTitle(QApplication::translate("MeInstall", "3. Installation in progress", 0, QApplication::UnicodeUTF8));
         abortInstallButton->setText(QApplication::translate("MeInstall", "Abort", 0, QApplication::UnicodeUTF8));
         abortInstallButton->setShortcut(QApplication::translate("MeInstall", "Alt+A", 0, QApplication::UnicodeUTF8));
-        installLabel->setText(QApplication::translate("MeInstall", "Ready to install antiX filesystem", 0, QApplication::UnicodeUTF8));
+        installLabel->setText(QApplication::translate("MeInstall", "Ready to install Swift Linux filesystem", 0, QApplication::UnicodeUTF8));
         tipsBox->setTitle(QApplication::translate("MeInstall", "Tips", 0, QApplication::UnicodeUTF8));
         bootMethodGroup->setTitle(QApplication::translate("MeInstall", "4. Select Boot Method", 0, QApplication::UnicodeUTF8));
         grubMbrButton->setText(QApplication::translate("MeInstall", "MBR", 0, QApplication::UnicodeUTF8));
         grubMbrButton->setShortcut(QApplication::translate("MeInstall", "Alt+B", 0, QApplication::UnicodeUTF8));
         grubRootButton->setText(QApplication::translate("MeInstall", "root", 0, QApplication::UnicodeUTF8));
         grubInsLabel->setText(QApplication::translate("MeInstall", "Install on:", 0, QApplication::UnicodeUTF8));
-        grubCheckBox->setText(QApplication::translate("MeInstall", "Install GRUB for antiX and Windows", 0, QApplication::UnicodeUTF8));
+        grubCheckBox->setText(QApplication::translate("MeInstall", "Install GRUB for Swift Linux and Windows", 0, QApplication::UnicodeUTF8));
         grubCheckBox->setShortcut(QApplication::translate("MeInstall", "Alt+A", 0, QApplication::UnicodeUTF8));
         grubBootDiskLabel->setText(QApplication::translate("MeInstall", "System boot disk:", 0, QApplication::UnicodeUTF8));
         initrdCheck->setText(QApplication::translate("MeInstall", "use initrd (recommended)", 0, QApplication::UnicodeUTF8));
@@ -1126,7 +1126,7 @@ public:
         userNameLabel->setText(QApplication::translate("MeInstall", "Default user login name:", 0, QApplication::UnicodeUTF8));
         passwordCheckBox->setText(QApplication::translate("MeInstall", "Show passwords", 0, QApplication::UnicodeUTF8));
         reminderBox->setTitle(QApplication::translate("MeInstall", "Reminders", 0, QApplication::UnicodeUTF8));
-        remindersBrowser->setHtml(QApplication::translate("MeInstall", "<p><b>Support antiX</b><br/>antiX is supported by people like you. Some help others at the support forum - http://antix.freeforums.org, or translate help files into different languages, or make suggestions, write documentation, or help test new software.</p>", 0, QApplication::UnicodeUTF8));
+        remindersBrowser->setHtml(QApplication::translate("MeInstall", "<p>Support Swift Linux.</p><p><b>Support antiX</b><br/>antiX is supported by people like you. Some help others at the support forum - http://antix.freeforums.org, or translate help files into different languages, or make suggestions, write documentation, or help test new software.</p>", 0, QApplication::UnicodeUTF8));
         backButton->setText(QApplication::translate("MeInstall", "< Back", 0, QApplication::UnicodeUTF8));
         backButton->setShortcut(QApplication::translate("MeInstall", "Alt+K", 0, QApplication::UnicodeUTF8));
         nextButton->setText(QApplication::translate("MeInstall", "Next >", 0, QApplication::UnicodeUTF8));
